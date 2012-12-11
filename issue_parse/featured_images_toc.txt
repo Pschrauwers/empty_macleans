@@ -1,0 +1,44 @@
+<script>
+var	carousel,
+	el,
+	i,
+	page,
+	slides = [
+		'<a href="12h_bak_feschuk.html"><img style="max-height:250px;" src="images/MAC46_ASKAMY01.jpg"></a>',
+		'<a href="12f_bak_holmes.html"><img style="max-height:250px;" src="images/MAC46_ASKAMY01.jpg"></a>',
+		'<a href="05a_good_bad.html"><img style="max-height:250px;" src="images/MAC46_ASKAMY01.jpg"></a>'
+	];
+
+carousel = new SwipeView('#wrapper', {
+	numberOfPages: slides.length,
+	hastyPageFlip: true
+});
+
+// Load initial data
+for (i=0; i<3; i++) {
+	page = i==0 ? slides.length-1 : i-1;
+
+	el = document.createElement('span');
+	el.innerHTML = slides[page];
+	carousel.masterPages[i].appendChild(el)
+	$('div.bullets span:eq(' + carousel.pageIndex + ')').addClass('selected');
+}
+
+carousel.onFlip(function () {
+	var el,
+		upcoming,
+		i;
+
+	for (i=0; i<3; i++) {
+		upcoming = carousel.masterPages[i].dataset.upcomingPageIndex;
+
+		if (upcoming != carousel.masterPages[i].dataset.pageIndex) {
+			el = carousel.masterPages[i].querySelector('span');
+			el.innerHTML = slides[upcoming];
+		}
+	}
+	$('div.bullets span').removeClass('selected');
+	$('div.bullets span:eq(' + carousel.pageIndex + ')').addClass('selected');
+
+});
+</script>
