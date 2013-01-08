@@ -24,15 +24,16 @@ $('document').ready(function(){
 		e.preventDefault();
 		$('div#third').css('visibility', 'visible');
 	});
-	$('a#close-YIP').click(function(e) {
+	$('div#close-YIP').click(function(e) {
 		e.preventDefault();
-		$('div#container').fadeIn();
 		$('div.image-featured').css('visibility', 'hidden');
+		$('div#container').fadeIn();
 	});
 	$('a.toggle-caption').click(function(e) {
 		e.preventDefault();
 		$('div.caption-YIP').text($(this).attr('title')).fadeToggle();
 	});
+
 	
 	
 	$(".fancybox").fancybox({
@@ -74,7 +75,15 @@ $('document').ready(function(){
 
 })(jQuery);
 
-
+var small = "small";
+var medium = "medium";
+var large = "large";
+var fontSizeChange = function (fontSize) {
+	$('div.content, dl').children().each(function(){
+		$(this).removeClass("large medium small")
+		$(this).addClass(fontSize);
+	}); 
+}
 
 
 
