@@ -42,10 +42,14 @@ $('document').ready(function(){
 		helpers : {
     		title : {
     			type : 'outside'
-    		}
+    		},
+    		overlay: {
+			    speedIn: 200, 
+			    speedOut: 200
+    		} 
     	},
-		openEffect	: 'none',
-		closeEffect	: 'none'
+		openEffect	: 'fade',
+		closeEffect	: 'fade'
 	});
 
 
