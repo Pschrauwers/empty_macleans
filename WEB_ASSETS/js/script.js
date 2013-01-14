@@ -21,17 +21,30 @@ $('document').ready(function(){
 	$('#thirdBatch').click(function(e){
 		$('div#container').hide();
 		$('div.image-featured').css('visibility', 'hidden');
+
 		e.preventDefault();
 		$('div#third').css('visibility', 'visible');
 	});
 	$('div#close-YIP').click(function(e) {
 		e.preventDefault();
 		$('div.image-featured').css('visibility', 'hidden');
+		$('div#main-image').css('visibility', 'visible');
 		$('div#container').fadeIn();
 	});
+	var captionDisplay = "hidden";
 	$('a.toggle-caption').click(function(e) {
 		e.preventDefault();
-		$('div.caption-YIP').text($(this).attr('title')).fadeToggle();
+		if (captionDisplay === "hidden") {
+			captionDisplay = "show";
+			$('a.toggle-caption').addClass('here').removeClass('gone');
+			$('div.caption-YIP').text($(this).attr('title')).fadeIn();
+		} else {
+			captionDisplay = "hidden";
+			$('a.toggle-caption').removeClass('here').addClass('gone');
+			$('div.caption-YIP').text($(this).attr('title')).fadeOut();
+		}
+
+		
 	});
 
 	
@@ -83,7 +96,7 @@ var small = "small";
 var medium = "medium";
 var large = "large";
 var fontSizeChange = function (fontSize) {
-	$('div.content, dl').children().each(function(){
+	$('div.content, dl').children().not('div.weblinks').each(function(){
 		$(this).removeClass("large medium small")
 		$(this).addClass(fontSize);
 	}); 
