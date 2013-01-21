@@ -9,6 +9,7 @@ $('document').ready(function(){
 	$('#firstBatch').click(function(e){
 		$('div#container').hide();
 		$('div.image-featured').css('visibility', 'hidden');
+		$('body').css('background', 'black');
 		e.preventDefault();
 		$('div#first').css('visibility', 'visible');
 	});
@@ -29,6 +30,7 @@ $('document').ready(function(){
 		e.preventDefault();
 		$('div.image-featured').css('visibility', 'hidden');
 		$('div#main-image').css('visibility', 'visible');
+		$('body').css('background', 'white');
 		$('div#container').fadeIn();
 	});
 	var captionDisplay = "hidden";
@@ -96,7 +98,7 @@ var small = "small";
 var medium = "medium";
 var large = "large";
 var fontSizeChange = function (fontSize) {
-	$('div.content, dl').children().not('div.weblinks').each(function(){
+	$('div.content, dl').children().not('div.weblinks, dt, div.content .hedline h1, div.content .byline, div.content .slug').each(function(){
 		$(this).removeClass("large medium small")
 		$(this).addClass(fontSize);
 	}); 
