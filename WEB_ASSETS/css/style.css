@@ -886,6 +886,21 @@ section.category article:last-child {
 #main div.weblinks a.twitter {
   color: #2caae2;
 }
+#main .audio-clip {
+  border-top: 2px solid #acacac;
+  border-bottom: 2px solid #acacac;
+  margin: 10px 0;
+  background: url("images/audio@2x.jpg") left center no-repeat;
+  background-size: 37px 37px;
+}
+#main .audio-clip a {
+  font-family: bentonsansbold;
+  font-size: 17px;
+  line-height: 1.0em;
+  color: #989898;
+  display: block;
+  padding: 12px 12px 12px 45px;
+}
 #main article.yip {
   margin-top: 167px;
   color: white;
