@@ -389,8 +389,9 @@ a:hover {
 }
 
 p {
-  text-indent: 1.5em;
-  margin: 0 0 0;
+  text-indent: 0;
+  margin-top: 1.0em;
+  margin-bottom: 0;
 }
 
 em {
@@ -398,9 +399,9 @@ em {
   font-style: normal;
 }
 
-p:first-child {
-  text-indent: 0;
-  margin-top: 1.0em;
+p + p {
+  text-indent: 1.5em;
+  margin: 0;
 }
 
 #container {
@@ -706,17 +707,9 @@ section.category article:last-child {
   margin-bottom: -15px;
   margin-right: 6px;
 }
-#main .content p {
-  text-indent: 1.5em;
-  margin: 0 0 0;
-}
 #main .content em {
   font-family: 'new_macleans_italic';
   font-style: normal;
-}
-#main .content p:first-child {
-  text-indent: 0;
-  margin-top: 1.0em;
 }
 #main .content p:last-of-type:after {
   width: 20px;
@@ -869,7 +862,7 @@ section.category article:last-child {
   text-align: left;
   border-bottom: 1px solid rgba(28, 27, 28, 0.2);
 }
-#main article.backpages dl dd p:first-child {
+#main article.backpages dl dd p {
   margin-top: 0;
 }
 #main div.weblinks {
