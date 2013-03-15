@@ -1217,19 +1217,26 @@ span a {
   line-height: 1.17391em !important;
 }
 
+
 /* styles for image zoom */
 .image-wrapper {
   text-align: center;
 }
 
+.js-zoom {
+  max-height:350px;
+}
+.js-slide .js-zoom {
+  max-height:none;
+}
 .js-slide {
   overflow: auto !important;
   -webkit-overflow-scrolling: touch !important;
-  max-height: 430px !important;
+  max-height: 350px !important;
   max-width: 296px !important;
 }
 .js-slide img {
-  max-width: none !important;
+  max-width: 640px !important;
 }
 
 /* fancyBox v2.1.3 fancyapps.com | fancyapps.com/fancybox/#license */

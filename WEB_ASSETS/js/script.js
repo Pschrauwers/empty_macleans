@@ -6,9 +6,6 @@
 
 $('document').ready(function(){
 
-
-
-
 	$('#firstBatch').click(function(e){
 		$('div#container').hide();
 		$('div.image-featured').css('visibility', 'hidden');
@@ -33,7 +30,7 @@ $('document').ready(function(){
 		e.preventDefault();
 		$('div.image-featured').css('visibility', 'hidden');
 		$('div#main-image').css('visibility', 'visible');
-		$('body').css('background', 'white');
+		$('body').css('color') === "rgb(255, 255, 255)" ? null : $('body').css('background', 'white');
 		$('div#container').fadeIn();
 	});
 	var captionDisplay = "hidden";
